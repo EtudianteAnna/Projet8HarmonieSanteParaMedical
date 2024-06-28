@@ -1,0 +1,17 @@
+﻿@page
+@model HSPMFront.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <img src="~/Images/bg-banner (1).jpg" class="img-fluid" />
+    <div class="mt-4">
+        <a class="btn btn-primary" asp-controller="Account" asp-action="Login">Login</a>
+        <a class="btn btn-secondary" asp-controller="Account" asp-action="Register">Register</a>
+        <a class="btn btn-info" href="http://localhost:7081/api/booking"> Booking</a>
+        <a class="btn btn-info" href="http://localhost:7002/api/praticien"> Praticien</a>
+    </div>
+</div>

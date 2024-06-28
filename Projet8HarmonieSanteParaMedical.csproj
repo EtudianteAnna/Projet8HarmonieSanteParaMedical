@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="AuthService\AuthService.csproj" />
+    <None Include="BookingApi\BookingApi.csproj" />
+    <None Include="CommonModels\CommonModels.csproj" />
+    <None Include="PraticiensApi\PraticiensApi.csproj" />
+    <None Include="PraticiensApi\PraticiensApi.csproj.user" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HarmonieSanteParamedical.Authentication.Models\AuthService\AuthService.csproj" />
+    <ProjectReference Include="..\HarmonieSanteParamedical.Authentication.Models\BookingApi\BookingApi.csproj" />
+    <ProjectReference Include="..\HarmonieSanteParamedical.Authentication.Models\CommonModels\CommonModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AuthService\bin\Debug\net6.0\" />
+    <Folder Include="AuthService\obj\Debug\net6.0\refint\" />
+    <Folder Include="AuthService\obj\Debug\net6.0\ref\" />
+  </ItemGroup>
+
+</Project>
