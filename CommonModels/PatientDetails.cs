@@ -4,6 +4,8 @@ namespace CommonModels;
 
 public class PatientDetails
 {
+    public string UserId;
+
     [Key]
     public int Id { get; set; }
     public int PatientId { get; set; }

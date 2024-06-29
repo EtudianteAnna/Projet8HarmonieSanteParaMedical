@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CommonModels;
 using AuthService.Login;
+using CommonModels.Login;
 
 namespace ApiGateway.Controllers
 {

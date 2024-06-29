@@ -7,7 +7,7 @@ using System.Security.Claims;
 
 namespace BookingAPI.Controllers
 {
-    [Authorize(Policy = "ViewBooking")]
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class BookingController : ControllerBase
@@ -19,9 +19,8 @@ namespace BookingAPI.Controllers
             _bookingService = bookingService;
         }
 
-        // Obtenir toutes les réservations (basé sur le rôle)
         [HttpGet]
-        [Authorize(Policy = "ViewBooking")]
+        [Authorize(Policy = "BookingPolicy")]
         public ActionResult<IEnumerable<BookingModel>> GetAllBookings()
         {
             var role = User.FindFirst(ClaimTypes.Role)?.Value;
@@ -32,16 +31,15 @@ namespace BookingAPI.Controllers
                 var patientBookings = _bookingService.GetBookingsForPatient(userId);
                 return Ok(patientBookings);
             }
-            else // Admin ou Practitioner
+            else
             {
                 var allBookings = _bookingService.GetAllBookings();
                 return Ok(allBookings);
             }
         }
 
-        // Obtenir une réservation par ID (basé sur le rôle)
         [HttpGet("{id}")]
-        [Authorize(Policy = "ViewBooking")]
+        [Authorize(Policy = "BookingPolicy")]
         public ActionResult<BookingModel> GetBookingById(int id)
         {
             var booking = _bookingService.GetBookingById(id);
@@ -61,7 +59,6 @@ namespace BookingAPI.Controllers
             return Ok(booking);
         }
 
-        // Créer une nouvelle réservation (pour les Patients)
         [HttpPost]
         [Authorize(Roles = "Patient")]
         public ActionResult<BookingModel> CreateBooking([FromBody] BookingModel booking)
@@ -70,7 +67,6 @@ namespace BookingAPI.Controllers
             return CreatedAtAction(nameof(GetBookingById), new { id = booking.Id }, booking);
         }
 
-        // Mettre à jour une réservation (uniquement pour les Admins)
         [HttpPut("{id}")]
         [Authorize(Policy = "AdminPolicy")]
         public IActionResult UpdateBooking(int id, [FromBody] BookingModel booking)
@@ -83,7 +79,6 @@ namespace BookingAPI.Controllers
             return NoContent();
         }
 
-        // Supprimer une réservation (uniquement pour les Admins)
         [HttpDelete("{id}")]
         [Authorize(Policy = "AdminPolicy")]
         public IActionResult DeleteBooking(int id)

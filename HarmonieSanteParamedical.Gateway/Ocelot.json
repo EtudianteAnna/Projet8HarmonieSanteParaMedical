@@ -1,7 +1,19 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/auth/{everything}",
+      "DownstreamPathTemplate": "/swagger/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7140
+        }
+      ],
+      "UpstreamPathTemplate": "/swagger/{everything}",
+      "UpstreamHttpMethod": [  "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/auth/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -10,78 +22,34 @@
         }
       ],
       "UpstreamPathTemplate": "/auth/{everything}",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/booking/{everything}",
+      "DownstreamPathTemplate": "/booking/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5237
+          "Port": 7081
         }
       ],
       "UpstreamPathTemplate": "/booking/{everything}",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "AuthorizationPolicy": "ViewBooking"
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/praticien/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/praticiens/{everything}",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5123
+          "Port": 7160
         }
       ],
-      "UpstreamPathTemplate": "/praticien/{everything}",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "AuthorizationPolicy": "ViewPraticien"
-    },
-    {
-      "DownstreamPathTemplate": "/swagger/auth/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7064
-        }
-      ],
-      "UpstreamPathTemplate": "/swagger/auth/{everything}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "DownstreamPathTemplate": "/swagger/booking/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5237
-        }
-      ],
-      "UpstreamPathTemplate": "/swagger/booking/{everything}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "DownstreamPathTemplate": "/swagger/praticien/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5123
-        }
-      ],
-      "UpstreamPathTemplate": "/swagger/praticien/{everything}",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamPathTemplate": "/praticiens/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000"
+    "BaseUrl": "https://localhost:7140"
   }
 }

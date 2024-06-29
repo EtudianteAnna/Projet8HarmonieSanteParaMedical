@@ -62,9 +62,11 @@ namespace BookingAPI.Services
             return true;
         }
 
-        public object GetBookingsForPatient(string? userId)
+        // Implémentation de la méthode GetBookingsForPatient
+        public IEnumerable<BookingModel> GetBookingsForPatient(string userId)
         {
-            throw new NotImplementedException();
+            // Filtrer les réservations par userId (Patient ID)
+            return _bookings.Where(b => b.Patient.UserId == userId).ToList();
         }
     }
 }

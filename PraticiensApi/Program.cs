@@ -48,6 +48,13 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// Configuration de l'autorisation
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("PraticienPolicy", policy =>
+        policy.RequireAuthenticatedUser());
+});
+
 // Ajout de Swagger
 builder.Services.AddSwaggerGen(c =>
 {
@@ -102,6 +109,6 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-
+app.MapControllers();
 
 app.Run();

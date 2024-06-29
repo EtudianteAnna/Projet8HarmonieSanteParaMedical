@@ -1,4 +1,4 @@
-﻿namespace AuthService.Login;
+﻿namespace CommonModels.Login;
 
 public class User
 {

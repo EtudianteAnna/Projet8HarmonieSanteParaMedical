@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using CommonModels;
+using CommonModels.Login;
 
 namespace AuthService.Login;
     public interface IAuth
