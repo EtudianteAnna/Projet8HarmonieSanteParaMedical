@@ -4,9 +4,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 
-namespace HSPMFront.Controllers
+namespace HSPMFront.Controller
 {
-    public class HomeController : Controller
+    public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
         public IActionResult Index()
         {

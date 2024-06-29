@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmark", "Benchmark\Benc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjet8", "TestProjet8\TestProjet8.csproj", "{6CFFEC82-DFB1-428D-94BE-33CC026D34C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSPMFront", "HSPMFront\HSPMFront.csproj", "{4FEAC6E8-1C73-4BF7-A9D8-8EC42011C85E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HSPMFront", "HSPMFront\HSPMFront.csproj", "{4FEAC6E8-1C73-4BF7-A9D8-8EC42011C85E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

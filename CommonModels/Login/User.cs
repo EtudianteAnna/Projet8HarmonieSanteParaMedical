@@ -2,6 +2,8 @@
 
 public class User
 {
+
+    public int Id { get; set; }
     public string Username { get; set; }      // Nom d'utilisateur
     public string Password { get; set; }      // Mot de passe
     public string Email { get; set; }         // Email de l'utilisateur

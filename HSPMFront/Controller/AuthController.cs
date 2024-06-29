@@ -1,11 +1,8 @@
 ﻿using CommonModels;
-using CommonModels.Login;
+using CommonModels.DTOs;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
 
-namespace HSPMFront.Controllers
+namespace HSPMFront.Controller
 {
     [ApiController]
     [Route("api/auth")]
@@ -19,7 +16,7 @@ namespace HSPMFront.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] UserLogin model)
+        public async Task<IActionResult> Login([FromBody] UserLoginDTO model)
         {
             var response = await _httpClient.PostAsJsonAsync("http://localhost:5000/auth/api/auth/login", model);
             if (response.IsSuccessStatusCode)
@@ -31,7 +28,7 @@ namespace HSPMFront.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] User model)
+        public async Task<IActionResult> Register([FromBody] UserRegisterDTO model) 
         {
             var response = await _httpClient.PostAsJsonAsync("http://localhost:5000/auth/api/auth/register", model);
             if (response.IsSuccessStatusCode)

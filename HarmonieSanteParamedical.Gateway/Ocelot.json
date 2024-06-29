@@ -50,6 +50,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:7140"
+    "BaseUrl": "https://localhost:5000"
   }
 }

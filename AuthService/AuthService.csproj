@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookingApi\BookingApi.csproj" />
+    
     <ProjectReference Include="..\CommonModels\CommonModels.csproj" />
     <ProjectReference Include="..\HarmonieSanteParamedical.Gateway\HarmonieSanteParamedical.Gateway.csproj" />
     <ProjectReference Include="..\PraticiensApi\PraticiensApi.csproj" />

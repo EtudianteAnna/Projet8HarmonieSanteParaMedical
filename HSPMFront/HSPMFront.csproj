@@ -22,9 +22,11 @@
   <ItemGroup>
     <ProjectReference Include="..\AuthService\AuthService.csproj" />
     <ProjectReference Include="..\CommonModels\CommonModels.csproj" />
-    <ProjectReference Include="..\HarmonieSanteParamedical.Gateway\HarmonieSanteParamedical.Gateway.csproj" />
-    <ProjectReference Include="..\PraticiensApi\PraticiensApi.csproj" />
-	  
   </ItemGroup>
+
+  
+ 
+	  
+ 
 
 </Project>

@@ -9,8 +9,11 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Charger appsettings.json
+// Ajouter la configuration
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+// Ajouter les services au conteneur
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Enregistrer le DbContext
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
@@ -55,7 +58,6 @@ builder.Services.AddScoped<TokenServiceFactory>(provider =>
 
 // Enregistrer le service HttpClient
 builder.Services.AddHttpClient();
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

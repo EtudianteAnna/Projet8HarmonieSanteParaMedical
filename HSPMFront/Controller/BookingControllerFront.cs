@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace HSPMFront.Controllers
+namespace HSPMFront.Controller
 {
     [Route("booking")]
-    public class BookingController : Controller
+    public class BookingController : Microsoft.AspNetCore.Mvc.Controller
     {
         [HttpGet]
         public IActionResult Index()

@@ -55,6 +55,7 @@ builder.Services.AddAuthorization(options =>
         policy.RequireAuthenticatedUser());
 });
 
+builder.Services.AddEndpointsApiExplorer();
 // Ajout de Swagger
 builder.Services.AddSwaggerGen(c =>
 {

@@ -1,5 +1,5 @@
-using AuthService.Login;
 using AuthService.Services;
+using HarmonieSanteParamedical.ClientGateway.Controllers;
 using HSPMFront.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -40,9 +40,11 @@ namespace HSPMFront
             });
 
             // Add services to the container.
+            builder.Services.AddControllers();
             builder.Services.AddControllersWithViews(); // Ajoutez les services de contrôleurs avec vues
             builder.Services.AddHttpClient<ApiGatewayService>(); // Ajoutez ApiGatewayService avec HttpClient
             builder.Services.AddRazorPages();
+            
 
             // Ajouter la configuration de Swagger
             builder.Services.AddSwaggerGen(c =>
@@ -68,8 +70,6 @@ namespace HSPMFront
 
                 c.AddSecurityRequirement(securityRequirement);
             });
-
-            builder.Services.AddScoped<IAuth, AuthenService>();
 
             var app = builder.Build();
 

@@ -11,6 +11,9 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+builder.Services.AddHttpClient();
+
 // Ajout de la chaîne de connexion
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 

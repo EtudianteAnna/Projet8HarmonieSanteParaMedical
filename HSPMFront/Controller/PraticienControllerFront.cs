@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace HSPMFront.Controllers
+namespace HSPMFront.Controller
 {
     [Route("praticien")]
-    public class PraticienController : Controller
+    public class PraticienController : Microsoft.AspNetCore.Mvc.Controller
     {
         [HttpGet]
         public IActionResult Index()
